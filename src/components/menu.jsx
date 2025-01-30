@@ -6,7 +6,7 @@ const menuItems = [
   { src: "/pasta.png", title: "Pâtes aux Fruits de Mer", desc: "Délicieuses pâtes faites maison avec des fruits de mer frais.", delay: 0.2 },
   { src: "/salmon.png", title: "Saumon Grillé", desc: "Saumon grillé à la perfection avec une sauce au citron et herbes.", delay: 0.4 },
   { src: "/oysters.png", title: "Huîtres Fraîches", desc: "Sélection des meilleures huîtres servies avec citron et vinaigre d’échalote.", delay: 0.6 },
-  { src: "/steak.png", title: "Filet de Bœuf Rossini", desc: "Tendre filet de bœuf sur un toast, garni de foie gras et truffe noire.", delay: 0.8 },
+  { src: "/steak.jpg", title: "Filet de Bœuf Rossini", desc: "Tendre filet de bœuf sur un toast, garni de foie gras et truffe noire.", delay: 0.8 },
   { src: "/dessert.png", title: "Fondant au Chocolat", desc: "Dessert moelleux avec un cœur fondant au chocolat noir.", delay: 1.0 },
   { src: "/cocktail.png", title: "Cocktail Signature", desc: "Un mélange exotique de fruits frais et spiritueux raffinés.", delay: 1.2 },
 ];
