@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const menuItems = [
   { src: "/pasta.jpg", title: "Pâtes aux Fruits de Mer", desc: "Délicieuses pâtes faites maison avec des fruits de mer frais.", delay: 0.2 },
   { src: "/salmon.jpg", title: "Saumon Grillé", desc: "Saumon grillé à la perfection avec une sauce au citron et herbes.", delay: 0.4 },
-  { src: "/oysters.jpg", title: "Huîtres Fraîches", desc: "Sélection des meilleures huîtres servies avec citron et vinaigre d’échalote.", delay: 0.6 },
+  { src: "/oysters.jpg", title: "Huîtres Fraîches", desc: "Sélection des meilleures huîtres servies avec citron et vinaigre d'échalote.", delay: 0.6 },
   { src: "/steak.jpg", title: "Filet de Bœuf Rossini", desc: "Tendre filet de bœuf sur un toast, garni de foie gras et truffe noire.", delay: 0.8 },
   { src: "/dessert.jpg", title: "Fondant au Chocolat", desc: "Dessert moelleux avec un cœur fondant au chocolat noir.", delay: 1.0 },
   { src: "/cocktail.jpg", title: "Cocktail Signature", desc: "Un mélange exotique de fruits frais et spiritueux raffinés.", delay: 1.2 },
@@ -55,6 +55,7 @@ const Menu = () => {
                 alt={item.title}
                 layout="fill"
                 objectFit="cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6">
@@ -66,20 +67,19 @@ const Menu = () => {
         </motion.div>
 
         <div className="mt-12 flex justify-center relative z-10">
-  <motion.button
-    onClick={() => setIsOpen(true)}
-    className="px-8 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 pointer-events-auto"
-    whileHover={{ scale: 1.05 }}
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: 1.5, duration: 0.8 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    Voir la Carte Complète
-  </motion.button>
-</div>
-
+          <motion.button
+            onClick={() => setIsOpen(true)}
+            className="px-8 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 pointer-events-auto"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.5, duration: 0.8 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Voir la Carte Complète
+          </motion.button>
+        </div>
 
         {/* Full-Screen Modal */}
         <AnimatePresence>
@@ -113,7 +113,14 @@ const Menu = () => {
                   {menuItems.map((item, index) => (
                     <div key={index} className="flex items-center space-x-4">
                       <div className="w-16 h-16 relative">
-                        <Image src={item.src} alt={item.title} layout="fill" objectFit="cover" className="rounded-lg" />
+                        <Image 
+                          src={item.src} 
+                          alt={item.title} 
+                          layout="fill" 
+                          objectFit="cover" 
+                          className="rounded-lg"
+                          sizes="100px"
+                        />
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold">{item.title}</h3>
