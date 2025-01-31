@@ -25,6 +25,7 @@ const Navbar = () => {
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false); 
   };
 
   return (
@@ -84,7 +85,7 @@ const Navbar = () => {
               </motion.button>
             ))}
 
-            <LanguageSwitcher />
+            <LanguageSwitcher onLanguageChange={() => {}} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,20 +94,41 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-black/90 backdrop-blur-lg p-6 rounded-lg mt-4">
-            {[t('navbar.about'), t('navbar.menu'), t('navbar.contact')].map((item, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  scrollToSection(item.toLowerCase().replace(" ", "-"))
-                }}
-                className="block w-full text-white text-lg font-medium py-2 hover:text-yellow-400 transition-all"
-              >
-                {item}
-              </button>
-            ))}
+          <div 
+            className="md:hidden fixed inset-0 bg-black/90 backdrop-blur-lg z-40 pt-20"
+            onClick={() => setIsOpen(false)}
+          >
+            <div className="container mx-auto px-6">
+              <div className="space-y-4">
+                {[t('navbar.about'), t('navbar.menu'), t('navbar.contact')].map((item, index) => (
+                  <motion.button
+                    key={index}
+                    onClick={() => {
+                      scrollToSection(item.toLowerCase().replace(" ", "-"));
+                      setIsOpen(false);
+                    }}
+                    className="block w-full text-white text-2xl font-semibold py-3 hover:text-yellow-400 transition-all"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    {item}
+                  </motion.button>
+                ))}
+              </div>
+
+              <div className="mt-8 border-t border-white/20 pt-6" onClick={(e) => e.stopPropagation()}>
+                <motion.div
+                  className="flex justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <LanguageSwitcher onLanguageChange={() => setIsOpen(false)} />
+                </motion.div>
+              </div>
+            </div>
           </div>
         )}
       </motion.nav>
