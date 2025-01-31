@@ -1,0 +1,58 @@
+{
+  "navbar": {
+    "about": "About Us",
+    "menu": "Menu",
+    "contact": "Contact",
+    "slogan": "Italian & Mediterranean Flavors",
+    "hero_description": "A gastronomic journey through the Mediterranean."
+  },
+  "about": {
+    "title": "An Exceptional Culinary Journey",
+    "description_1": "At <span class='text-orange-400 font-semibold'>Le Stelle del Mare</span>, we invite you to discover the exquisite flavors of the Mediterranean. Each dish is a culinary masterpiece, prepared with passion and carefully selected ingredients.",
+    "description_2": "From the freshest seafood to homemade artisan pasta, every bite is a sensory journey. Let yourself be carried away by a unique gastronomic experience.",
+    "signature_dishes": "Signature Dishes",
+    "pasta": "Seafood Pasta",
+    "salmon": "Grilled Salmon",
+    "oysters": "Fresh Oysters"
+  },
+  "menu": {
+    "title": "Our Refined Menu",
+    "description": "Discover a selection of dishes prepared with passion, showcasing authentic flavors and culinary finesse.",
+    "full_menu": "View Full Menu",
+    "close": "Close",
+    "items": {
+      "pasta": {
+        "title": "Seafood Pasta",
+        "desc": "Delicious homemade pasta with fresh seafood."
+      },
+      "salmon": {
+        "title": "Grilled Salmon",
+        "desc": "Perfectly grilled salmon with lemon and herb sauce."
+      },
+      "oysters": {
+        "title": "Fresh Oysters",
+        "desc": "Selection of the finest oysters served with lemon and shallot vinegar."
+      },
+      "steak": {
+        "title": "Beef Fillet Rossini",
+        "desc": "Tender beef fillet on toast, garnished with foie gras and black truffle."
+      },
+      "dessert": {
+        "title": "Chocolate Fondant",
+        "desc": "Soft dessert with a melting dark chocolate heart."
+      },
+      "cocktail": {
+        "title": "Signature Cocktail",
+        "desc": "An exotic mix of fresh fruits and refined spirits."
+      }
+    }
+  },
+  "footer": {
+    "contact": "Contact Us",
+    "phone": "+216 55 123 456",
+    "address": "Avenue Habib Bourguiba, Tunis",
+    "follow": "Follow Us",
+    "copyright": "Le Stelle del Mare. All rights reserved.",
+    "description": "A culinary journey where tradition and modernity meet in an unforgettable gastronomic experience."
+  }
+}

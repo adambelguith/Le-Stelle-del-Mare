@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-
-const menuItems = [
-  { src: "/pasta.jpg", title: "Pâtes aux Fruits de Mer", desc: "Délicieuses pâtes faites maison avec des fruits de mer frais.", delay: 0.2 },
-  { src: "/salmon.jpg", title: "Saumon Grillé", desc: "Saumon grillé à la perfection avec une sauce au citron et herbes.", delay: 0.4 },
-  { src: "/oysters.jpg", title: "Huîtres Fraîches", desc: "Sélection des meilleures huîtres servies avec citron et vinaigre d'échalote.", delay: 0.6 },
-  { src: "/steak.jpg", title: "Filet de Bœuf Rossini", desc: "Tendre filet de bœuf sur un toast, garni de foie gras et truffe noire.", delay: 0.8 },
-  { src: "/dessert.jpg", title: "Fondant au Chocolat", desc: "Dessert moelleux avec un cœur fondant au chocolat noir.", delay: 1.0 },
-  { src: "/cocktail.jpg", title: "Cocktail Signature", desc: "Un mélange exotique de fruits frais et spiritueux raffinés.", delay: 1.2 },
-];
+import { useTranslation } from 'next-i18next';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation('common');
+
+  const menuItems = [
+    { src: "/pasta.jpg", title: t('menu.items.pasta.title'), desc: t('menu.items.pasta.desc'), delay: 0.2 },
+    { src: "/salmon.jpg", title: t('menu.items.salmon.title'), desc: t('menu.items.salmon.desc'), delay: 0.4 },
+    { src: "/oysters.jpg", title: t('menu.items.oysters.title'), desc: t('menu.items.oysters.desc'), delay: 0.6 },
+    { src: "/steak.jpg", title: t('menu.items.steak.title'), desc: t('menu.items.steak.desc'), delay: 0.8 },
+    { src: "/dessert.jpg", title: t('menu.items.dessert.title'), desc: t('menu.items.dessert.desc'), delay: 1.0 },
+    { src: "/cocktail.jpg", title: t('menu.items.cocktail.title'), desc: t('menu.items.cocktail.desc'), delay: 1.2 },
+  ];
 
   return (
     <section id="menu" className="relative py-28 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] overflow-hidden">
@@ -28,10 +30,10 @@ const Menu = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-6xl font-bold bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
-            Notre Menu Raffiné
+            {t('menu.title')}
           </h2>
           <p className="text-lg text-gray-300 mt-4 max-w-3xl mx-auto">
-            Découvrez une sélection de plats préparés avec passion, mettant en valeur les saveurs authentiques et la finesse culinaire.
+            {t('menu.description')}
           </p>
         </motion.div>
 
@@ -77,7 +79,7 @@ const Menu = () => {
             transition={{ delay: 1.5, duration: 0.8 }}
             whileTap={{ scale: 0.95 }}
           >
-            Voir la Carte Complète
+            {t('menu.full_menu')}
           </motion.button>
         </div>
 
@@ -106,7 +108,7 @@ const Menu = () => {
 
                 {/* Menu Content */}
                 <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
-                  Notre Carte Complète
+                  {t('menu.title')}
                 </h2>
 
                 <div className="mt-6 space-y-4">
@@ -138,7 +140,7 @@ const Menu = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Fermer
+                    {t('menu.close')}
                   </motion.button>
                 </div>
               </motion.div>

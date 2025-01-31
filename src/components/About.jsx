@@ -1,16 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 const About = () => {
+  const { t } = useTranslation("common");
+
   const foodItems = [
-    { src: "/pasta.jpeg", alt: "Pâtes aux fruits de mer", delay: 0.2 },
-    { src: "/salmon.jpeg", alt: "Saumon grillé", delay: 0.4 },
-    { src: "/oysters.jpeg", alt: "Huîtres fraîches", delay: 0.6 },
+    { src: "/pasta.jpeg", alt: t("about.pasta"), delay: 0.2 },
+    { src: "/salmon.jpeg", alt: t("about.salmon"), delay: 0.4 },
+    { src: "/oysters.jpeg", alt: t("about.oysters"), delay: 0.6 },
   ];
 
   return (
-    <section id="a-propos" className="relative py-28 bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] overflow-hidden">
+    <section
+      id="a-propos"
+      className="relative py-28 bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] overflow-hidden"
+    >
       {/* Texture en arrière-plan */}
       <div className="absolute inset-0 " />
 
@@ -33,13 +39,13 @@ const About = () => {
               duration: 3 + Math.random() * 3,
               repeat: Infinity,
               delay: Math.random() * 2,
-              opacity: { 
-                repeat: Infinity, 
-                repeatType: "mirror", 
-                duration: 3, 
+              opacity: {
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 3,
                 ease: "easeInOut",
-                values: [0.4, 1, 0.4]
-              }
+                values: [0.4, 1, 0.4],
+              },
             }}
           />
         ))}
@@ -79,7 +85,7 @@ const About = () => {
               transition={{ delay: 0.8, duration: 0.8 }}
             >
               <span className="text-2xl font-bold text-white">20+</span>
-              <p className="text-orange-300">Plats Signatures</p>
+              <p className="text-orange-300">{t("about.signature_dishes")}</p>
             </motion.div>
           </div>
 
@@ -87,30 +93,25 @@ const About = () => {
           <div className="space-y-8">
             <motion.h2
               className="text-5xl font-bold bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent"
-              initial={{ opacity: 0.2, x: -50 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              Un Voyage Culinaire d'Exception
-            </motion.h2>
+              dangerouslySetInnerHTML={{ __html: t("about.title") }}
+            />
             <motion.p
               className="text-lg text-gray-300 leading-relaxed"
-              initial={{ opacity: 0.2, x: -50 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-            >
-              Chez <span className="text-orange-400 font-semibold">Le Stelle del Mare</span>, nous vous invitons à
-              découvrir les saveurs exquises de la Méditerranée. Chaque plat est une œuvre d'art culinaire, préparé avec passion et des ingrédients soigneusement sélectionnés.
-            </motion.p>
+              dangerouslySetInnerHTML={{ __html: t("about.description_1") }}
+            />
             <motion.p
               className="text-lg text-gray-300 leading-relaxed"
-              initial={{ opacity: 0.2, x: -50 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-            >
-              Des fruits de mer les plus frais aux pâtes artisanales faites maison, chaque bouchée est un voyage sensoriel. Laissez-vous emporter par une expérience gastronomique unique.
-            </motion.p>
-            
+              dangerouslySetInnerHTML={{ __html: t("about.description_2") }}
+            />
           </div>
         </motion.div>
       </div>

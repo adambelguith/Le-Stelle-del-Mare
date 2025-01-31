@@ -1,11 +1,8 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import About from '@/components/About'
 import Footer from '@/components/Footer'
 import Menu from '@/components/menu'
-
-const inter = Inter({ subsets: ['latin'] })
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
   return (
@@ -18,4 +15,13 @@ export default function Home() {
       <Footer />
     </div>
   )
+}
+
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
 }

@@ -3,10 +3,13 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useTranslation } from 'next-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,12 +52,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="flex items-center space-x-3 cursor-pointer"
+            className="flex items-center  cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="relative w-14 h-14">
+            <div className="relative w-20 h-20">
               <Image
-                src="/logo.png" // Ensure the logo is stored in /public/logo.png
+                src="/logos.png" // Ensure the logo is stored in /public/logo.png
                 alt="Le Stelle del Mare Logo"
                 layout="fill"
                 objectFit="contain"
@@ -66,13 +69,12 @@ const Navbar = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-10">
-            {["A Propos", "Menu", "Contact"].map((item, index) => (
+          <div className="hidden md:flex items-center space-x-10">
+            {[t('navbar.about'), t('navbar.menu'), t('navbar.contact')].map((item, index) => (
               <motion.button
                 key={index}
                 onClick={() => {
                   scrollToSection(item.toLowerCase().replace(" ", "-"))
-                console.log('item ',item.toLowerCase().replace(" ", "-"))
                 }}
                 className="text-lg font-medium text-white hover:text-yellow-400 transition-all relative group"
                 whileHover={{ y: -4 }}
@@ -81,6 +83,8 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-500"></span>
               </motion.button>
             ))}
+
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -92,13 +96,11 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-black/90 backdrop-blur-lg p-6 rounded-lg mt-4">
-            {["A Propos", "Menu", "Contact"].map((item, index) => (
-              
+            {[t('navbar.about'), t('navbar.menu'), t('navbar.contact')].map((item, index) => (
               <button
                 key={index}
                 onClick={() => {
                   scrollToSection(item.toLowerCase().replace(" ", "-"))
-                console.log('item ',item.toLowerCase().replace(" ", "-"))
                 }}
                 className="block w-full text-white text-lg font-medium py-2 hover:text-yellow-400 transition-all"
               >
@@ -117,7 +119,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Saveurs Tunisiennes & Méditerranéennes
+          {t('navbar.slogan')}
         </motion.h1>
 
         <motion.p
@@ -126,7 +128,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Un voyage gastronomique à travers la Méditerranée.
+          {t('navbar.hero_description')}
         </motion.p>
 
         {/* Scroll Down Indicator */}

@@ -1,0 +1,58 @@
+{
+    "navbar": {
+        "about": "Chi Siamo",
+        "menu": "Menù",
+        "contact": "Contatto",
+        "slogan": "Sapori Italiani & Mediterranei",
+        "hero_description": "Un viaggio gastronomico attraverso il Mediterraneo."
+    },
+    "about": {
+        "title": "Un Viaggio Culinario d'Eccezione",
+        "description_1": "Da <span class='text-orange-400 font-semibold'>Le Stelle del Mare</span>, vi invitiamo a scoprire i sapori squisiti del Mediterraneo. Ogni piatto è un'opera d'arte culinaria, preparato con passione e ingredienti accuratamente selezionati.",
+        "description_2": "Dai frutti di mare più freschi alla pasta artigianale fatta in casa, ogni boccone è un viaggio sensoriale. Lasciatevi trasportare in un'esperienza gastronomica unica.",
+        "signature_dishes": "Piatti Signature",
+        "pasta": "Pasta ai frutti di mare",
+        "salmon": "Salmone alla griglia",
+        "oysters": "Ostriche fresche"
+    },
+    "menu": {
+        "title": "Il Nostro Menu Raffinato",
+        "description": "Scopri una selezione di piatti preparati con passione, che mettono in risalto i sapori autentici e la raffinatezza culinaria.",
+        "full_menu": "Vedi il Menu Completo",
+        "close": "Chiudi",
+        "items": {
+            "pasta": {
+                "title": "Pâtes aux Fruits de Mer",
+                "desc": "Deliziose pasta fatta in casa con frutti di mare freschi."
+            },
+            "salmon": {
+                "title": "Salmone Grillé",
+                "desc": "Salmone grigliato alla perfezione con salsa al limone ed erbe."
+            },
+            "oysters": {
+                "title": "Ostriche Fresche",
+                "desc": "Selezione delle migliori ostriche servite con limone e aceto di scalogno."
+            },
+            "steak": {
+                "title": "Filet de Bœuf Rossini",
+                "desc": "Tenero filetto di manzo su toast, guarnito con foie gras e tartufo nero."
+            },
+            "dessert": {
+                "title": "Fondant al Cioccolato",
+                "desc": "Dessert morbido con cuore fondente di cioccolato nero."
+            },
+            "cocktail": {
+                "title": "Cocktail Signature",
+                "desc": "Un mix esotico di frutta fresca e spiriti raffinati."
+            }
+        }
+    },
+    "footer": {
+        "contact": "Contattaci",
+        "phone": "+216 55 123 456",
+        "address": "Avenue Habib Bourguiba, Tunis",
+        "follow": "Seguici",
+        "copyright": " Le Stelle del Mare. Tutti i diritti riservati.",
+        "description": "Un viaggio culinario dove tradizione e modernità si incontrano in un'esperienza gastronomica indimenticabile."
+    }
+}
