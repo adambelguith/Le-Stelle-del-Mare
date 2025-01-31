@@ -71,20 +71,21 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-10">
-            {[t('navbar.about'), t('navbar.menu'), t('navbar.contact')].map((item, index) => (
+            {[
+              { id: 'about', text: t('navbar.about') },
+              { id: 'menu', text: t('navbar.menu') },
+              { id: 'contact', text: t('navbar.contact') }
+            ].map((item, index) => (
               <motion.button
                 key={index}
-                onClick={() => {
-                  scrollToSection(item.toLowerCase().replace(" ", "-"))
-                }}
+                onClick={() => scrollToSection(item.id)}
                 className="text-lg font-medium text-white hover:text-yellow-400 transition-all relative group"
                 whileHover={{ y: -4 }}
               >
-                {item}
+                {item.text}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-500"></span>
               </motion.button>
             ))}
-
             <LanguageSwitcher onLanguageChange={() => {}} />
           </div>
 
@@ -101,11 +102,15 @@ const Navbar = () => {
           >
             <div className="container mx-auto px-6">
               <div className="space-y-4">
-                {[t('navbar.about'), t('navbar.menu'), t('navbar.contact')].map((item, index) => (
+                {[
+                  { id: 'about', text: t('navbar.about') },
+                  { id: 'menu', text: t('navbar.menu') },
+                  { id: 'contact', text: t('navbar.contact') }
+                ].map((item, index) => (
                   <motion.button
                     key={index}
                     onClick={() => {
-                      scrollToSection(item.toLowerCase().replace(" ", "-"));
+                      scrollToSection(item.id);
                       setIsOpen(false);
                     }}
                     className="block w-full text-white text-2xl font-semibold py-3 hover:text-yellow-400 transition-all"
@@ -113,7 +118,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    {item}
+                    {item.text}
                   </motion.button>
                 ))}
               </div>

@@ -14,7 +14,7 @@ const About = () => {
 
   return (
     <section
-      id="a-propos"
+      id="about"
       className="relative py-28 bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] overflow-hidden"
     >
       {/* Texture en arrière-plan */}
