@@ -49,10 +49,16 @@
   },
   "footer": {
     "contact": "Contact Us",
-    "phone": "+216 55 123 456",
-    "address": "Avenue Habib Bourguiba, Tunis",
+    "phone": "+39 0544 123456",
+    "address": "Viale Emilia 89, Pinarella, Cervia (RA)",
     "follow": "Follow Us",
     "copyright": "Le Stelle del Mare. All rights reserved.",
-    "description": "A culinary journey where tradition and modernity meet in an unforgettable gastronomic experience."
+    "description": "A culinary journey where tradition and modernity meet in an unforgettable gastronomic experience.",
+    "opening_hours": {
+      "title": "Opening Hours",
+      "lunch": "12:00 PM - 3:00 PM",
+      "dinner": "7:00 PM - 12:00 AM",
+      "days": "Every day"
+    }
   }
 }
