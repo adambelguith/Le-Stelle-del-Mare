@@ -34,10 +34,10 @@ const Footer = () => {
           {/* Contact Details */}
           <div className="space-y-4">
             <h3 className="text-2xl font-semibold text-yellow-400">{t('footer.contact')}</h3>
-            {/* <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3">
               <FaPhoneAlt className="text-yellow-500" />
               <span className="text-gray-300">{t('footer.phone')}</span>
-            </div> */}
+            </div>
             <div className="flex items-center space-x-3">
               <FaMapMarkerAlt className="text-yellow-500" />
               <span className="text-gray-300">{t('footer.address')}</span>
