@@ -3,10 +3,12 @@ import About from '@/components/About'
 import Footer from '@/components/Footer'
 import Menu from '@/components/menu'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { RestaurantSchema } from '../components/SEO';
 
-export default function Home() {
+const HomePage = () => {
   return (
     <div className="bg-gray-900 text-white font-sans min-h-screen">
+      <RestaurantSchema />
       <Navbar />
       <main className=" ">
         <About />
@@ -17,6 +19,7 @@ export default function Home() {
   )
 }
 
+export default HomePage;
 
 export async function getStaticProps({ locale }) {
   return {
