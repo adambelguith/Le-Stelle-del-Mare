@@ -45,7 +45,7 @@ const Menu = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl font-bold mb-8">
-            Il Menu di Le Stelle del Mare
+            Menu Le Stelle del Mare
           </h2>
           <h2 className="text-6xl font-bold bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
             {t('menu.title')}
