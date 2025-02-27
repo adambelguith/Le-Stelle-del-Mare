@@ -12,10 +12,10 @@ export default function Document() {
         <meta property="og:title" content="Le Stelle del Mare - Ristorante di Pesce" />
         <meta property="og:description" content="Scopri la vera cucina di mare a Pinarella di Cervia. Prenota il tuo tavolo oggi stesso!" />
         <meta property="og:image" content="/images/logo.png" />
-        <meta property="og:url" content="https://www.lestelledelmare.com" />
+        <meta property="og:url" content="https://www.le-stelle-del-mare.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://www.lestelledelmare.com" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.le-stelle-del-mare.com" />
+        <link rel="icon" href="/favicons.ico" />
         <title>Le Stelle del Mare - Ristorante di Pesce a Pinarella di Cervia</title>
       </Head>
       <body className="antialiased">
